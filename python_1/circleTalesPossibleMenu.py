@@ -8,12 +8,11 @@ def makeFile():
 
 def openFile():
     global fileAmount
-    print(f"You have {fileAmount} files.")
     if fileAmount == 0:
         print("You don't have any files.")
         return
-        
     try:
+        print(f"You have {fileAmount} files.")
         response = int(input("What file would you like to open? (Enter number): "))
         if response > fileAmount:
             print("You don't have that many files.")
@@ -26,10 +25,9 @@ def openFile():
 def mainMenu():
     while True:  # Added loop to prevent recursion errors
         print("\nMain Menu:")
-        print("1. New File (NF)")
-        print("2. Open File (OF)")
-        print("3. Online Multiplayer (OM)")
-        print("4. Exit")
+        allFeatures = ["New File (NF)", "Open File (OF)", "Online Multiplayer (OF)", "Exit (E)"]
+        for currentFeature in allFeatures:
+            print(currentFeature)
         
         option = input("Choose an option: ").upper()
         
@@ -47,12 +45,12 @@ def mainMenu():
             else:
                 openFile()
         elif option == "OM":
-            print("Online multiplayer is not supported in this version.")
-        elif option == "EXIT" or option == "4":
-            print("Thanks for playing!")
+            print("Online multiplayer is not supported in this version. Remember, this is a conceptual Python title screen, not")
+        elif option == "E":
+            print("Ok, bye. Not like there is anything to do in this game.")
             break
         else:
-            print("Invalid option. Please try again.")
+            print("That is not an option, moron.")
 
 def main():
     print("_" * 80)
